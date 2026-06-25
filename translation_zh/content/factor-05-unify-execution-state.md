@@ -1,4 +1,4 @@
-[← 返回 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 返回 README](../README.md)
 
 ### 5. 统一执行状态和业务状态
 
@@ -13,19 +13,19 @@
 
 如果可能，尽量简化 —— 尽可能将它们统一。
 
-[![155-unify-state](https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif)](https://github.com/user-attachments/assets/e5a851db-f58f-43d8-8b0c-1926c99fc68d)
+[![155-unify-state](../../img/155-unify-state-animation.gif)](https://github.com/user-attachments/assets/e5a851db-f58f-43d8-8b0c-1926c99fc68d)
 
 
 <details>
-<summary><a href="https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif">GIF 版本</a></summary>
+<summary><a href="../../img/155-unify-state-animation.gif">GIF 版本</a></summary>
 
-![155-unify-state](https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif)
+![155-unify-state](../../img/155-unify-state-animation.gif)
 
 </details>
 
 实际上，你可以设计你的应用程序，使得所有执行状态都可以从上下文窗口中推断出来。在许多情况下，执行状态（当前步骤、等待状态等）只是关于到目前为止发生了什么的元数据。
 
-你可能有一些无法放入上下文窗口的东西，如会话 ID、密码上下文等，但你的目标应该是尽量减少这些东西。通过拥抱[因素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)，你可以控制实际传递给 LLM 的内容。
+你可能有一些无法放入上下文窗口的东西，如会话 ID、密码上下文等，但你的目标应该是尽量减少这些东西。通过拥抱[因素 3](factor-03-own-your-context-window.md)，你可以控制实际传递给 LLM 的内容。
 
 这种方法有几个优势：
 
@@ -37,4 +37,4 @@
 6. **分叉**：通过将线程的某个子集复制到新的上下文/状态 ID 中，即可在任意点分叉线程
 7. **人机界面和可观测性**：轻松将线程转换为人类可读的 Markdown 或丰富的 Web 应用 UI
 
-[← 工具就是结构化输出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [启动/暂停/恢复 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
+[← 工具就是结构化输出](factor-04-tools-are-structured-outputs.md) | [启动/暂停/恢复 →](factor-06-launch-pause-resume.md)

@@ -1,4 +1,4 @@
-[← 返回 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 返回 README](../../README.md)
 
 ## 详细版本：我们是如何走到这里的
 
@@ -15,19 +15,19 @@
 
 我们将大量讨论有向图（DG）及其无环的朋友们——DAG。首先要指出的是……嗯……软件本身就是有向图。这就是为什么我们过去用流程图来表示程序。
 
-![010-software-dag](https://github.com/humanlayer/12-factor-agents/blob/main/img/010-software-dag.png)
+![010-software-dag](../../img/010-software-dag.png)
 
 ### 20 年前
 
 大约 20 年前，我们开始看到 DAG 编排器变得流行起来。我们说的是经典工具，如 [Airflow](https://airflow.apache.org/)、[Prefect](https://www.prefect.io/)，以及一些前辈和一些较新的工具（如 [dagster](https://dagster.io/)、[inggest](https://www.inngest.com/)、[windmill](https://www.windmill.dev/)）。它们遵循相同的图模式，并额外提供了可观测性、模块化、重试、管理等能力。
 
-![015-dag-orchestrators](https://github.com/humanlayer/12-factor-agents/blob/main/img/015-dag-orchestrators.png)
+![015-dag-orchestrators](../../img/015-dag-orchestrators.png)
 
 ### 10-15 年前
 
 当 ML 模型开始变得足够好用时，我们开始看到 DAG 中融入了 ML 模型。你可能会想到这样的步骤："将此列中的文本摘要为新列"或"按严重程度或情感对支持问题进行分类"。
 
-![020-dags-with-ml](https://github.com/humanlayer/12-factor-agents/blob/main/img/020-dags-with-ml.png)
+![020-dags-with-ml](../../img/020-dags-with-ml.png)
 
 但归根结底，它大部分还是那些经典好用的确定性软件。
 
@@ -35,11 +35,11 @@
 
 我并不是[第一个这么说的人](https://youtu.be/Dc99-zTMyMg?si=bcT0hIwWij2mR-40&t=73)，但我开始学习 Agent 时最大的收获是：你可以把 DAG 扔掉了。不再需要软件工程师编写每个步骤和边界条件的代码，你可以给 Agent 一个目标和一组转换：
 
-![025-agent-dag](https://github.com/humanlayer/12-factor-agents/blob/main/img/025-agent-dag.png)
+![025-agent-dag](../../img/025-agent-dag.png)
 
 让 LLM 实时做出决策来确定路径
 
-![026-agent-dag-lines](https://github.com/humanlayer/12-factor-agents/blob/main/img/026-agent-dag-lines.png)
+![026-agent-dag-lines](../../img/026-agent-dag-lines.png)
 
 这里的愿景是你写更少的软件，只需给 LLM 图的"边"，让它自己确定节点。你可以从错误中恢复，可以写更少的代码，而且你可能会发现 LLM 能找到问题的新颖解决方案。
 
@@ -70,18 +70,18 @@ while True:
 
 这是一个多步骤示例：
 
-[![027-agent-loop-animation](https://github.com/humanlayer/12-factor-agents/blob/main/img/027-agent-loop-animation.gif)](https://github.com/user-attachments/assets/3beb0966-fdb1-4c12-a47f-ed4e8240f8fd)
+[![027-agent-loop-animation](../../img/027-agent-loop-animation.gif)](https://github.com/user-attachments/assets/3beb0966-fdb1-4c12-a47f-ed4e8240f8fd)
 
 <details>
-<summary><a href="https://github.com/humanlayer/12-factor-agents/blob/main/img/027-agent-loop-animation.gif">GIF 版本</a></summary>
+<summary><a href="../../img/027-agent-loop-animation.gif">GIF 版本</a></summary>
 
-![027-agent-loop-animation](https://github.com/humanlayer/12-factor-agents/blob/main/img/027-agent-loop-animation.gif)
+![027-agent-loop-animation](../../img/027-agent-loop-animation.gif)
 
 </details>
 
 生成的"物化"DAG 看起来像这样：
 
-![027-agent-loop-dag](https://github.com/humanlayer/12-factor-agents/blob/main/img/027-agent-loop-dag.png)
+![027-agent-loop-dag](../../img/027-agent-loop-dag.png)
 
 ### 这种"循环直到解决"模式的问题
 
@@ -106,9 +106,9 @@ while True:
 
 我在实际中**确实**经常见到的一种做法是：采用 Agent 模式，将其融入更广泛的确定性 DAG 中。
 
-![micro-agent-dag](https://github.com/humanlayer/12-factor-agents/blob/main/img/028-micro-agent-dag.png)
+![micro-agent-dag](../../img/028-micro-agent-dag.png)
 
-你可能会问——"这种情况下为什么还要用 Agent？"——我们很快就会讨论到，但基本上，让语言模型管理范围明确的任务集，可以轻松整合实时的人类反馈，将其转化为工作流步骤，而不会陷入上下文错误循环（[因子 1](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md)、[因子 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)、[因子 7](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-07-contact-humans-with-tools.md)）。
+你可能会问——"这种情况下为什么还要用 Agent？"——我们很快就会讨论到，但基本上，让语言模型管理范围明确的任务集，可以轻松整合实时的人类反馈，将其转化为工作流步骤，而不会陷入上下文错误循环（[因子 1](../factor-01-natural-language-to-tool-calls.md)、[因子 3](../factor-03-own-your-context-window.md)、[因子 7](../factor-07-contact-humans-with-tools.md)）。
 
 > #### 让语言模型管理范围明确的任务集，可以轻松整合实时的人类反馈……而不会陷入上下文错误循环
 
@@ -116,7 +116,7 @@ while True:
 
 这里有一个例子，展示确定性代码如何运行一个负责处理部署中人类参与步骤的微 Agent。
 
-![029-deploybot-high-level](https://github.com/humanlayer/12-factor-agents/blob/main/img/029-deploybot-high-level.png)
+![029-deploybot-high-level](../../img/029-deploybot-high-level.png)
 
 * **人类** 将 PR 合并到 GitHub main 分支
 * **确定性代码** 部署到预发布环境
@@ -137,18 +137,18 @@ while True:
 * **确定性代码** 对生产环境运行端到端测试
 * **确定性代码** 任务完成，或交给回滚 Agent 审查失败情况并可能进行回滚
 
-[![033-deploybot-animation](https://github.com/humanlayer/12-factor-agents/blob/main/img/033-deploybot.gif)](https://github.com/user-attachments/assets/deb356e9-0198-45c2-9767-231cb569ae13)
+[![033-deploybot-animation](../../img/033-deploybot.gif)](https://github.com/user-attachments/assets/deb356e9-0198-45c2-9767-231cb569ae13)
 
 <details>
-<summary><a href="https://github.com/humanlayer/12-factor-agents/blob/main/img/033-deploybot.gif">GIF 版本</a></summary>
+<summary><a href="../../img/033-deploybot.gif">GIF 版本</a></summary>
 
-![033-deploybot-animation](https://github.com/humanlayer/12-factor-agents/blob/main/img/033-deploybot.gif)
+![033-deploybot-animation](../../img/033-deploybot.gif)
 
 </details>
 
 这个例子基于一个真实的[开源 Agent，我们在 Humanlayer 用来管理部署](https://github.com/got-agents/agents/tree/main/deploybot-ts)——这是我上周与它的真实对话：
 
-![035-deploybot-conversation](https://github.com/humanlayer/12-factor-agents/blob/main/img/035-deploybot-conversation.png)
+![035-deploybot-conversation](../../img/035-deploybot-conversation.png)
 
 
 我们没有给这个 Agent 大量的工具或任务。LLM 的主要价值在于解析人类的纯文本反馈并提出更新的行动方案。我们尽可能隔离任务和上下文，让 LLM 专注于一个小型的、5-10 步的工作流。
@@ -157,12 +157,12 @@ while True:
 
 ### 那么 Agent 到底是什么？
 
-- **提示（Prompt）** - 告诉 LLM 如何行为，以及它有哪些可用的"工具"。提示的输出是一个 JSON 对象，描述工作流中的下一步（"工具调用"或"函数调用"）（[因子 2](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)）
-- **switch 语句** - 根据 LLM 返回的 JSON，决定如何处理它（[因子 8](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md) 的一部分）
-- **累积上下文** - 存储已发生的步骤列表及其结果（[因子 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)）
-- **for 循环** - 直到 LLM 发出某种"终止"工具调用（或纯文本响应）之前，将 switch 语句的结果添加到上下文窗口，并要求 LLM 选择下一步（[因子 8](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)）
+- **提示（Prompt）** - 告诉 LLM 如何行为，以及它有哪些可用的"工具"。提示的输出是一个 JSON 对象，描述工作流中的下一步（"工具调用"或"函数调用"）（[因子 2](../factor-02-own-your-prompts.md)）
+- **switch 语句** - 根据 LLM 返回的 JSON，决定如何处理它（[因子 8](../factor-08-own-your-control-flow.md) 的一部分）
+- **累积上下文** - 存储已发生的步骤列表及其结果（[因子 3](../factor-03-own-your-context-window.md)）
+- **for 循环** - 直到 LLM 发出某种"终止"工具调用（或纯文本响应）之前，将 switch 语句的结果添加到上下文窗口，并要求 LLM 选择下一步（[因子 8](../factor-08-own-your-control-flow.md)）
 
-![040-4-components](https://github.com/humanlayer/12-factor-agents/blob/main/img/040-4-components.png)
+![040-4-components](../../img/040-4-components.png)
 
 在"deploybot"示例中，我们从掌控控制流和上下文累积中获得了几个好处：
 
@@ -171,7 +171,7 @@ while True:
 - 在我们的**提示**中，我们可以优化如何向 LLM 传递指令和"到目前为止发生了什么"
 
 
-[第二部分](https://github.com/humanlayer/12-factor-agents/blob/main/README.md#12-factor-agents)将**形式化这些模式**，使其可以应用于为任何软件项目添加令人印象深刻的 AI 功能，而无需完全投入传统的"AI Agent"实现/定义。
+[第二部分](../../README.md#12-factor-agents)将**形式化这些模式**，使其可以应用于为任何软件项目添加令人印象深刻的 AI 功能，而无需完全投入传统的"AI Agent"实现/定义。
 
 
-[因子 1 - 自然语言到工具调用 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md)
+[因子 1 - 自然语言到工具调用 →](../factor-01-natural-language-to-tool-calls.md)

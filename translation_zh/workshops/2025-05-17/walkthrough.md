@@ -1098,7 +1098,7 @@ baml_src/agent.baml
 
 在本节中，我们将探索如何使用推理步骤自定义 agent 的提示。
 
-这是 [factor 2 - 拥有你的提示](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-2-own-your-prompts.md) 的核心
+这是 [factor 2 - 拥有你的提示](../../../content/factor-2-own-your-prompts.md) 的核心
 
 AI That Works 上有一篇关于推理的深入文章 [推理模型与推理步骤](https://github.com/hellovai/ai-that-works/tree/main/2025-04-07-reasoning-models-vs-prompts)
 
@@ -1161,7 +1161,7 @@ baml_src/agent.baml
 
 在本节中，我们将探索如何自定义 agent 的上下文窗口。
 
-这是 [factor 3 - 拥有你的上下文窗口](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-3-own-your-context-window.md) 的核心
+这是 [factor 3 - 拥有你的上下文窗口](../../../content/factor-3-own-your-context-window.md) 的核心
 
 
 更新 agent 以美化打印模型的上下文窗口
@@ -1840,7 +1840,7 @@ src/agent.ts
 然后最终的 `done_for_now` 答案将打印回 CLI
 
 虽然有点刻意，但这是你从
-[factor 7 - 使用工具联系人类](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-7-contact-humans-with-tools.md) 获得灵活性的绝佳示例
+[factor 7 - 使用工具联系人类](../../../content/factor-7-contact-humans-with-tools.md) 获得灵活性的绝佳示例
 
 
 在本节中，我们将禁用 baml 日志。如果你想查看更多细节，可以选择启用它们。
@@ -1973,14 +1973,14 @@ src/cli.ts
 
 去回复邮件并提供一些反馈：
 
-![reject-email](https://github.com/humanlayer/12-factor-agents/blob/main/workshops/2025-05/walkthrough/11-email-reject.png?raw=true)
+![reject-email](../../../../workshops/2025-05/walkthrough/11-email-reject.png)
 
 
 你应该收到另一封包含基于你反馈的更新尝试的邮件！
 
 你可以继续批准这个：
 
-![approve-email](https://github.com/humanlayer/12-factor-agents/blob/main/workshops/2025-05/walkthrough/11-email-approve.png?raw=true)
+![approve-email](../../../../workshops/2025-05/walkthrough/11-email-approve.png)
 
 
 你的最终输出将如下所示
@@ -2073,7 +2073,7 @@ src/cli.ts
 
 你应该看到使用自定义模板的略有不同的邮件
 
-![custom-template-email](https://github.com/humanlayer/12-factor-agents/blob/main/workshops/2025-05/walkthrough/11-email-custom.png?raw=true)
+![custom-template-email](../../../../workshops/2025-05/walkthrough/11-email-custom.png)
 
 可以跟着流程走，然后你可以尝试按自己的喜好更新模板
 
@@ -2092,7 +2092,7 @@ src/cli.ts
 每次我们等待人类审批时，我们都在循环中轮询直到收到人类响应。
 
 这显然不是理想的方式，特别是对于生产工作负载，
-因此在本部分中，我们将通过更新服务器在联系人类后结束处理，并使用 webhooks 接收结果来实现 [factor 6 - 使用简单 API 启动 / 暂停 / 恢复](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-6-launch-pause-resume.md)。
+因此在本部分中，我们将通过更新服务器在联系人类后结束处理，并使用 webhooks 接收结果来实现 [factor 6 - 使用简单 API 启动 / 暂停 / 恢复](../../../content/factor-6-launch-pause-resume.md)。
 
 
 添加在服务器中初始化 humanlayer 的代码

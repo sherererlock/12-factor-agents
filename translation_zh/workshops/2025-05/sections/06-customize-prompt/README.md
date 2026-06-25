@@ -2,7 +2,7 @@
 
 在本节中，我们将探索如何使用推理步骤来自定义 agent 的提示词。
 
-这是[因素 2 - 掌控你的提示词](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-2-own-your-prompts.md)的核心内容
+这是[因素 2 - 掌控你的提示词](../../../../content/factor-2-own-your-prompts.md)的核心内容
 
 AI That Works 上有一篇关于推理的深入文章：[推理模型与推理步骤](https://github.com/hellovai/ai-that-works/tree/main/2025-04-07-reasoning-models-vs-prompts)
 

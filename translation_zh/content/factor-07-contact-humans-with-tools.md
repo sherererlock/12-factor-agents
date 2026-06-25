@@ -1,10 +1,10 @@
-[← 返回 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 返回 README](../README.md)
 
 ### 7. 通过工具调用与人类沟通
 
 默认情况下，LLM API 依赖于一个根本性的高风险 token 选择：我们是返回纯文本内容，还是返回结构化数据？
 
-![170-contact-humans-with-tools](https://github.com/humanlayer/12-factor-agents/blob/main/img/170-contact-humans-with-tools.png)
+![170-contact-humans-with-tools](../../img/170-contact-humans-with-tools.png)
 
 你在第一个 token 的选择上施加了很大的权重，在 `the weather in tokyo` 的情况下，第一个 token 是
 
@@ -66,9 +66,9 @@ def webhook(req: Request):
   return {"status": "ok"}
 ```
 
-上述内容包含了来自 [因子 5 - 统一执行状态与业务状态](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-05-unify-execution-state.md)、[因子 8 - 掌控你的控制流](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)、[因子 3 - 掌控你的上下文窗口](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) 和 [因子 4 - 工具就是结构化输出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) 的模式，以及其他几个因子。
+上述内容包含了来自 [因子 5 - 统一执行状态与业务状态](factor-05-unify-execution-state.md)、[因子 8 - 掌控你的控制流](factor-08-own-your-control-flow.md)、[因子 3 - 掌控你的上下文窗口](factor-03-own-your-context-window.md) 和 [因子 4 - 工具就是结构化输出](factor-04-tools-are-structured-outputs.md) 的模式，以及其他几个因子。
 
-如果我们使用来自 [因子 3 - 掌控你的上下文窗口](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md) 的 XML 格式化方式，经过几轮对话后我们的上下文窗口可能如下所示：
+如果我们使用来自 [因子 3 - 掌控你的上下文窗口](factor-03-own-your-context-window.md) 的 XML 格式化方式，经过几轮对话后我们的上下文窗口可能如下所示：
 
 ```xml
 
@@ -118,12 +118,12 @@ def webhook(req: Request):
 2. **内循环 vs 外循环**：支持在传统 ChatGPT 风格界面**之外**的代理工作流，其中控制流和上下文初始化可能是 `Agent->Human` 而非 `Human->Agent`（例如，由 cron 或事件触发的代理）
 3. **多人类接入**：可以通过结构化事件轻松跟踪和协调来自不同人类的输入
 4. **多代理**：简单的抽象可以轻松扩展以支持 `Agent->Agent` 的请求和响应
-5. **持久性**：结合 [因子 6 - 通过简单 API 启动/暂停/恢复](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)，这使得持久、可靠且可自省的多人协作工作流成为可能
+5. **持久性**：结合 [因子 6 - 通过简单 API 启动/暂停/恢复](factor-06-launch-pause-resume.md)，这使得持久、可靠且可自省的多人协作工作流成为可能
 
 [更多关于外循环代理的内容](https://theouterloop.substack.com/p/openais-realtime-api-is-a-step-towards)
 
-![175-outer-loop-agents](https://github.com/humanlayer/12-factor-agents/blob/main/img/175-outer-loop-agents.png)
+![175-outer-loop-agents](../../img/175-outer-loop-agents.png)
 
-与 [因子 11 - 从任何地方触发，在用户所在之处与他们会合](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-11-trigger-from-anywhere.md) 配合使用效果极佳
+与 [因子 11 - 从任何地方触发，在用户所在之处与他们会合](factor-11-trigger-from-anywhere.md) 配合使用效果极佳
 
-[← 启动/暂停/恢复](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md) | [掌控你的控制流 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-08-own-your-control-flow.md)
+[← 启动/暂停/恢复](factor-06-launch-pause-resume.md) | [掌控你的控制流 →](factor-08-own-your-control-flow.md)

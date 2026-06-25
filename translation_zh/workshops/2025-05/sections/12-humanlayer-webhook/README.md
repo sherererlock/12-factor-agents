@@ -3,7 +3,7 @@
 前面的章节使用了 humanlayer SDK 的"同步模式" - 这意味着每次我们等待人工审批时，都会在一个循环中轮询直到收到人工响应。
 
 这显然不是理想的做法，特别是对于生产工作负载，
-因此在本节中，我们将实现[因素 6 - 使用简单 API 启动 / 暂停 / 恢复](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-6-launch-pause-resume.md)，
+因此在本节中，我们将实现[因素 6 - 使用简单 API 启动 / 暂停 / 恢复](../../../../content/factor-6-launch-pause-resume.md)，
 通过更新服务器在联系人类后结束处理，并使用 webhook 接收结果。
 
 

@@ -2,7 +2,7 @@
 
 在本节中，我们将探索如何自定义 agent 的上下文窗口。
 
-这是[因素 3 - 掌控你的上下文窗口](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-3-own-your-context-window.md)的核心内容
+这是[因素 3 - 掌控你的上下文窗口](../../../../content/factor-3-own-your-context-window.md)的核心内容
 
 
 更新 agent 以美化打印模型的上下文窗口

@@ -1,10 +1,10 @@
-[← 返回 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 返回 README](../README.md)
 
 ### 2. 掌控你的提示词
 
 不要将你的提示词工程外包给框架。
 
-![120-own-your-prompts](https://github.com/humanlayer/12-factor-agents/blob/main/img/120-own-your-prompts.png)
+![120-own-your-prompts](../../img/120-own-your-prompts.png)
 
 顺便说一下，[这远非什么新颖的建议：](https://hamel.dev/blog/posts/prompt/)
 
@@ -68,7 +68,7 @@ function DetermineNextStep(thread: string) -> DoneForNow | ListGitTags | DeployB
 
 （上面的示例使用 [BAML](https://github.com/boundaryml/baml) 来生成提示词，但你可以使用任何你喜欢的提示词工程工具，甚至只是手动模板化它）
 
-如果函数签名看起来有点奇怪，我们将在[因素 4 - 工具就是结构化输出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md)中解释
+如果函数签名看起来有点奇怪，我们将在[因素 4 - 工具就是结构化输出](factor-04-tools-are-structured-outputs.md)中解释
 
 ```typescript
 function DetermineNextStep(thread: string) -> DoneForNow | ListGitTags | DeployBackend | DeployFrontend | RequestMoreInformation {
@@ -88,4 +88,4 @@ function DetermineNextStep(thread: string) -> DoneForNow | ListGitTags | DeployB
 
 我不知道什么是最好的提示词，但我知道你希望能够灵活地尝试一切。
 
-[← 自然语言转工具调用](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-01-natural-language-to-tool-calls.md) | [掌控你的上下文窗口 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)
+[← 自然语言转工具调用](factor-01-natural-language-to-tool-calls.md) | [掌控你的上下文窗口 →](factor-03-own-your-context-window.md)

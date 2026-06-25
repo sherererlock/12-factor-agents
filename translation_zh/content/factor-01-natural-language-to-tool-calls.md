@@ -1,10 +1,10 @@
-[← 返回 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+[← 返回 README](../README.md)
 
 ### 1. 自然语言转工具调用
 
 在智能体构建中，最常见的模式之一是将自然语言转换为结构化的工具调用。这是一种强大的模式，它使你能够构建能够推理任务并执行任务的智能体。
 
-![110-natural-language-tool-calls](https://github.com/humanlayer/12-factor-agents/blob/main/img/110-natural-language-tool-calls.png)
+![110-natural-language-tool-calls](../../img/110-natural-language-tool-calls.png)
 
 当原子化地应用此模式时，就是将类似这样的自然语言短语
 
@@ -30,7 +30,7 @@
 
 **注意**：实际上 Stripe API 要更复杂一些，[真正实现此功能的智能体](https://github.com/dexhorthy/mailcrew)（[视频](https://www.youtube.com/watch?v=f_cKnoPC_Oo)）需要先列出客户、列出产品、列出价格等，以便使用正确的 ID 构建此请求负载，或者将这些 ID 包含在提示词/上下文窗口中（我们将在下文中看到，这两者其实本质上是一样的！）
 
-然后，确定性代码可以接管该请求负载并对其执行操作。（更多内容请参见[因素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)）
+然后，确定性代码可以接管该请求负载并对其执行操作。（更多内容请参见[因素 3](factor-03-own-your-context-window.md)）
 
 ```python
 # LLM 接收自然语言并返回结构化对象
@@ -59,4 +59,4 @@ else:  # 模型没有调用我们已知的工具
 
 **但实际上**，我们在这里将跳过这个步骤，把它留到另一个因素中讨论，你可以选择是否也要加入该部分（取决于你！）
 
-[← 我们是如何走到这里的](https://github.com/humanlayer/12-factor-agents/blob/main/content/brief-history-of-software.md) | [掌控你的提示词 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-02-own-your-prompts.md)
+[← 我们是如何走到这里的](brief-history-of-software.md) | [掌控你的提示词 →](factor-02-own-your-prompts.md)

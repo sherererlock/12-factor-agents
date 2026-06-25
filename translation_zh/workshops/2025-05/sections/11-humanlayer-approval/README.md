@@ -7,7 +7,7 @@
 我们将从 CLI 调用工作流开始，但 `divide` 和 `request_more_information` 的审批将通过邮件处理，
 然后最终的 `done_for_now` 答案将打印回 CLI
 
-虽然有些刻意，但这是你从[因素 7 - 使用工具联系人类](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-7-contact-humans-with-tools.md)中获得灵活性的一个很好的例子
+虽然有些刻意，但这是你从[因素 7 - 使用工具联系人类](../../../../content/factor-7-contact-humans-with-tools.md)中获得灵活性的一个很好的例子
 
 
 在本节中，我们将禁用 baml 日志。你可以选择性地启用它们以查看更多细节。
@@ -140,14 +140,14 @@ HumanLayer: Requested human approval from HumanLayer cloud
 
 继续回复邮件并提供一些反馈：
 
-![reject-email](https://github.com/humanlayer/12-factor-agents/blob/main/workshops/2025-05/walkthrough/11-email-reject.png?raw=true)
+![reject-email](../../../../workshops/2025-05/walkthrough/11-email-reject.png)
 
 
 你应该会收到另一封邮件，其中包含根据你的反馈更新后的尝试！
 
 你可以批准这次操作：
 
-![approve-email](https://github.com/humanlayer/12-factor-agents/blob/main/workshops/2025-05/walkthrough/11-email-approve.png?raw=true)
+![approve-email](../../../../workshops/2025-05/walkthrough/11-email-approve.png)
 
 
 你的最终输出将如下所示
@@ -240,7 +240,7 @@ src/cli.ts
 
 你应该会看到使用自定义模板的略有不同的邮件
 
-![custom-template-email](https://github.com/humanlayer/12-factor-agents/blob/main/workshops/2025-05/walkthrough/11-email-custom.png?raw=true)
+![custom-template-email](../../../../workshops/2025-05/walkthrough/11-email-custom.png)
 
 按照流程继续操作，然后你可以尝试按自己的喜好更新模板
 
