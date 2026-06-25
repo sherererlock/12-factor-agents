@@ -1,0 +1,40 @@
+[← 返回 README](https://github.com/humanlayer/12-factor-agents/blob/main/README.md)
+
+### 5. 统一执行状态和业务状态
+
+即使在 AI 领域之外，许多基础设施系统也试图将"执行状态"与"业务状态"分开。对于 AI 应用程序，这可能涉及复杂的抽象来跟踪当前步骤、下一步、等待状态、重试次数等。这种分离带来了复杂性，可能是值得的，但对你的用例来说可能过度了。
+
+一如既往，由你来决定什么对你的应用程序是正确的。但不要认为你*必须*将它们分开管理。
+
+更明确地说：
+
+- **执行状态**：当前步骤、下一步、等待状态、重试次数等
+- **业务状态**：智能体工作流中到目前为止发生了什么（例如 OpenAI 消息列表、工具调用和结果列表等）
+
+如果可能，尽量简化 —— 尽可能将它们统一。
+
+[![155-unify-state](https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif)](https://github.com/user-attachments/assets/e5a851db-f58f-43d8-8b0c-1926c99fc68d)
+
+
+<details>
+<summary><a href="https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif">GIF 版本</a></summary>
+
+![155-unify-state](https://github.com/humanlayer/12-factor-agents/blob/main/img/155-unify-state-animation.gif)
+
+</details>
+
+实际上，你可以设计你的应用程序，使得所有执行状态都可以从上下文窗口中推断出来。在许多情况下，执行状态（当前步骤、等待状态等）只是关于到目前为止发生了什么的元数据。
+
+你可能有一些无法放入上下文窗口的东西，如会话 ID、密码上下文等，但你的目标应该是尽量减少这些东西。通过拥抱[因素 3](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-03-own-your-context-window.md)，你可以控制实际传递给 LLM 的内容。
+
+这种方法有几个优势：
+
+1. **简洁性**：所有状态只有一个真实来源
+2. **序列化**：线程可以轻松序列化/反序列化
+3. **调试**：整个历史记录在一个地方可见
+4. **灵活性**：只需添加新的事件类型即可轻松添加新状态
+5. **恢复**：只需加载线程即可从任意点恢复
+6. **分叉**：通过将线程的某个子集复制到新的上下文/状态 ID 中，即可在任意点分叉线程
+7. **人机界面和可观测性**：轻松将线程转换为人类可读的 Markdown 或丰富的 Web 应用 UI
+
+[← 工具就是结构化输出](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-04-tools-are-structured-outputs.md) | [启动/暂停/恢复 →](https://github.com/humanlayer/12-factor-agents/blob/main/content/factor-06-launch-pause-resume.md)
